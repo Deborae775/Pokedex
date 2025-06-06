@@ -1,0 +1,30 @@
+@import url(https://fonts.google.com/specimen/Inter);
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'oxaniun', cursive;  
+}
+body{
+    text-align: center;
+    background-color:  #6ab;
+    min-height: 100%;
+}
+
+main{
+    display: inline-block;
+    margin-top: 2%;
+}
+
+.pokedex {
+    width: 100%;
+    max-width: 4;
+}
+
+.pokedex_image {
+    width: 100%;
+    position: absolute;
+    but
+}

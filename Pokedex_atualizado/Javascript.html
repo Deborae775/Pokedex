@@ -1,0 +1,83 @@
+<script>
+const mensagens = [
+  "Olá! Bem-vindo(a) à Pokédex!",
+  "Clique na Pokédex para ver os Pokémon!",
+  "Gostou da pokédex?",
+  "Estou escutando quase queira responder",
+  "Você já capturou algum hoje?",
+  "Qual seu pokémon favorito?",
+  "Estou aqui se precisar de ajuda!",
+  ""
+];
+
+let index = 0;
+
+const fala = document.getElementById("fala");
+const musica = document.getElementById("musica-fundo");
+const botaoMusica = document.getElementById("botao-musica");
+const botaoFala = document.getElementById("botao-fala");
+
+function mostrarMensagem() {
+  fala.innerText = mensagens[index];
+  index = (index + 1) % mensagens.length;
+}
+
+// Mudança automática da fala
+setInterval(mostrarMensagem, 5000);
+
+// Botões
+botaoFala.addEventListener("click", () => {
+  fala.innerText = "Você clicou! Vamos conversar sobre Pokémon!";
+});
+
+botaoMusica.addEventListener("click", () => {
+  if (musica.paused) {
+    musica.play();
+    botaoMusica.innerText = "🔇 Pausar Música";
+  } else {
+    musica.pause();
+    botaoMusica.innerText = "🔊 Tocar Música";
+  }
+});
+
+
+  function abrirMenu() {
+    document.getElementById('menu-lateral').classList.add('aberto');
+  }
+
+  function fecharMenu() {
+    document.getElementById('menu-lateral').classList.remove('aberto');
+  }
+
+ // NOVO: Referência à imagem do Ash e ao elemento de áudio do Ash
+    const ashImg = document.getElementById("ash-img");
+    const ashSound = document.getElementById("ash-sound");
+
+    // Adicione um ouvinte de evento para o clique na imagem do Ash
+    ashImg.addEventListener("click", () => {
+        // Para garantir que o som sempre comece do início, mesmo se clicado várias vezes
+        ashSound.currentTime = 0; 
+        ashSound.play();
+    });
+
+    // Opcional: Se quiser que toque ao passar o mouse por cima
+    
+    ashImg.addEventListener("mouseover", () => {
+        ashSound.currentTime = 0; 
+        ashSound.play();
+    });
+    
+
+    // Opcional: Se quiser que o som pare ao tirar o mouse (se usou mouseover)
+    
+    ashImg.addEventListener("mouseout", () => {
+        ashSound.pause();
+        ashSound.currentTime = 0;
+    });
+    
+
+    // ... (o restante do seu script, incluindo as funções do menu e do balão de fala) ...
+
+</script>
+
+

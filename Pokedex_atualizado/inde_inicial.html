@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo à Pokédex!</title>
+    <link rel="icon" href="favicons/pikachu.png"> <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #d73204, #f14782); /* Um gradiente azul/cinza claro, como céu */
+            color: #875454;
+            text-align: center;
+            overflow: hidden; /* Para garantir que nada escape */
+            
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px); /* Efeito de desfoque se o fundo for uma imagem */
+            animation: fadeIn 1.5s ease-out; /* Animação de aparecimento */
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #000000; /* Vermelho vibrante */
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .start-button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            background-color: #fa0000; /* Verde vibrante */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .start-button:hover {
+            background-color: #1008b4;
+            transform: translateY(-3px); /* Pequeno efeito de elevação */
+        }
+
+        .start-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animação */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+    
+               .borda-esquerda,
+.borda-direita {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 550px; /* ajuste o tamanho conforme necessário */
+    height: auto;
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.borda-esquerda {
+    left: 0;
+}
+
+.borda-direita {
+    right: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima das imagens */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+        .pokemon-floating:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .pokemon-floating:nth-child(2) { top: 30%; right: 15%; animation-delay: 2s; transform: scaleX(-1); /* Inverter */ }
+        .pokemon-floating:nth-child(3) { bottom: 20%; left: 25%; animation-delay: 4s; }
+        .pokemon-floating:nth-child(4) { top: 50%; left: 5%; animation-delay: 6s; }
+        .pokemon-floating:nth-child(5) { bottom: 10%; right: 5%; animation-delay: 8s; transform: scaleX(-1); }
+
+        @keyframes floatAndFade {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+      <body>
+    <div class="borda-esquerda">
+        <img src="Css/imagens/fundo_pokemon.png" alt="Decoração esquerda">
+    </div>
+
+    <div class="borda-direita">
+        <img src="Css/imagens/fundo_pokemon2.png" alt="Decoração direita">
+    </div>
+
+    <div class="container">
+        <h1>Bem-vindo(a) ao Mundo Pokémon!</h1>
+        <p>Prepare-se para explorar e descobrir todos os Pokémon!</p>
+        <button class="start-button" onclick="startGame()">Iniciar Jogo</button>
+    </div>
+    <script>
+        function startGame() {
+            // Redireciona para a página da Pokédex
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

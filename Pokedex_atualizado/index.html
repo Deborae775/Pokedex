@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="icon" href="favicons/pikachu.png" />
+  <link rel="stylesheet" href="./Css/style.css" />
+
+<script defer src="./js/script.js"></script>
+  <title>Pokédex</title>
+  
+</head>
+<body>
+
+<!-- Botão para abrir o menu -->
+<button onclick="abrirMenu()" style="position: fixed;
+top: 20px; 
+right: 20px;
+z-index: 12000;
+ background: #fff; 
+border: 2px solid #333; 
+padding: 8px 12px; border-radius: 8px; 
+font-size: 18px; cursor:
+ pointer ; 
+ z-index: 0;">☰</button>
+
+<!-- Menu lateral -->
+<aside id="menu-lateral" class="menu-lateral">
+  <button class="btn-fechar" onclick="fecharMenu()">✖</button>
+  <h2> Como funciona a Pokédex?</h2>
+  <p>. Você pode digitar o nome ou número de um Pokémon.</p>
+  <p>  Exemplo: <strong>pikachu</strong> ou <strong>25</strong></p>
+  <p>. Atualmente você pode buscar até o Pokémon número <strong>1025</strong>.</p>
+  <p>  !AVISO! </p>
+  <p>. Não toque no menino Ash</p>
+  <p>. O pikachu tem ciúmes e pode ficar bravo!</p>
+</aside>
+
+
+  <main>
+    <h1>SEJA BEM-VINDO(A)</h1>
+    <div class="pokedex">
+      <img src="Css/imagens/pokedex.png" alt="Pokedex" class="pokedex_image" />
+    </div>
+  </main>
+     
+  <main>
+    <img src="Link"
+     alt="pokemon" class="pokemon_image">
+    <h1 class="pokemon_data">
+    <span class="pokemon_number"></span> -
+    <span class="pokedex_name"></span>
+    </h1>
+
+
+    <form class="form">
+      <input
+      type="search"
+      class="input_search"
+      placeholder="Nome ou Numero do seu pokémon!"
+      required/>
+    </form>
+
+    <div class="buttons">
+    <button class="button botao-prev">⬅️ Prev</button>
+    <button class="button botao-next" > Next ➡️</button>
+</div>
+
+
+    <img src="./imagens/pokedex.png" alt="pokedex" class="pokedex">
+
+  </main>
+
+  <img id="ash" src="imagens/menino_ash.png" alt="Ash" />
+  <audio id="pikachu-sound" src="sons/pikachu.mp3" preload="auto"></audio>
+
+  <!-- Personagem guia -->
+  <div class="guia">
+    <img src="Css/imagens/menino_ash.png" alt="Ash" class="guia-img" />
+    <div class="balao" id="fala">Olá! Bem-vindo(a) à Pokédex!</div>
+  </div>
+
+  <!-- Botão de conversa -->
+  <div class="botao-fala-container">
+    <p>QUER CONVERSAR ?</p>
+    <button id="botao-fala" class="botao-estiloso">🗨️ FALE COMIGO</button>
+  </div>
+
+  <!-- Música e botão -->
+  <audio id="musica-fundo" src="./Audio/musica.mp3" type="audio/mpeg" loop preload="auto"></audio>
+  <button id="botao-musica" class="botao-estiloso botao-musica">🔊 Tocar Música</button>
+
+  <!-- Script aqui -->
+  <script>
+    const mensagens = [
+      "Olá! Bem-vindo(a) à Pokédex!",
+      "Clique na Pokédex para ver os Pokémon!",
+      "Você já capturou algum hoje?",
+      "Estou aqui se precisar de ajuda!",
+      "Qual o seu pokémon favorito?",
+    ];
+
+    let index = 0;
+
+    const fala = document.getElementById("fala");
+    const musica = document.getElementById("musica-fundo");
+    const botaoMusica = document.getElementById("botao-musica");
+    const botaoFala = document.getElementById("botao-fala");
+
+    function mostrarMensagem() {
+      fala.innerText = mensagens[index];
+      index = (index + 1) % mensagens.length;
+    }
+
+    // Troca automática da mensagem
+    setInterval(mostrarMensagem, 5000);
+
+    // Botão fala
+    botaoFala.addEventListener("click", () => {
+      fala.innerText = "Você clicou! Vamos conversar sobre Pokémon!";
+    });
+
+    // Botão música
+    botaoMusica.addEventListener("click", () => {
+      if (musica.paused) {
+        musica.play().then(() => {
+          botaoMusica.innerText = "🔇 Pausar Música";
+        }).catch(err => {
+          alert("⚠️ Clique uma vez na tela antes de tocar música (regras do navegador).");
+          console.error(err);
+        });
+      } else {
+        musica.pause();
+        botaoMusica.innerText = "🔊 Tocar Música";
+      }
+    });
+// Funções para o menu lateral (se elas estiverem no seu script.js externo, você pode removê-las daqui)
+    function abrirMenu() {
+        document.getElementById("menu-lateral").style.width = "250px";
+    }
+
+    function fecharMenu() {
+        document.getElementById("menu-lateral").style.width = "0";
+    }
+
+    // Opcional: Iniciar o balão escondido ao carregar a página
+    // Isso é importante para garantir que ele esteja escondido no início.
+    // Você pode chamar toggleBalao(false) aqui ou confiar apenas no CSS.
+    // toggleBalao(false); // Descomente se quiser garantir que JS o esconda também.
+
+    
+
+  </script>
+</body>
+</html>

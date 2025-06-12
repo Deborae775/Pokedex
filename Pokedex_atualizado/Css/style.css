@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=oxanium:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'oxanium', cursive;
+  z-index: 9999; /* mantém na frente */
+
+}
+
+body {
+  text-align: center;
+  background-image: url('imagens/paisagem.jpg');
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.pokedex {
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.pokemon_image {
+  position: absolute;
+  top: 45%; /* ajusta o posicionamento vertical */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 120px; /* tamanho menor */
+  width: auto;
+  z-index: 10;
+}
+
+
+
+.pokemon_data{
+    position: absolute;
+    font-weight: 600;
+    color: #000;
+    top: 52.6%;
+    right: 42%;
+    font-size: clamp(8px, 5vw, 25px);
+}
+
+.pokemon_name{
+color: #3a444d;
+text-transform: capitalize;
+}
+
+.form {
+  position: absolute;
+  bottom: 33%; /* define que vai ficar na parte inferior */
+  left: 49%;
+  transform: translateX(-45%);
+  width: 20%;
+  z-index: 9999; /* mantém na frente */
+}
+
+.input_search {
+  width: 100%;
+  padding: 4px;
+  position:relative;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #3a444d;
+  font-size: clamp(8px, 5vw, 1rem);
+  box-shadow: -2px 3px 0 #888, -4px 6px 0 #333;
+}
+
+
+
+.buttons{
+    position: absolute;
+    bottom: 15%;
+    display: flex;
+    gap: 20px;
+    left: 50%;
+    width: 20%;
+    transform: translate(-50%, 0);
+     z-index: 9999; /* mantém na frente */
+}
+
+.button{
+    width: 50%;
+    padding: 4%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: clamp(8px, 5vw, 1rem);
+    font-weight: 600;
+    color: white;
+    background-color: #444;
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+}
+
+.balao {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
+  max-width: 200px;
+  font-size: 14px;
+  position: relative;
+}
+
+.button:active{
+box-shadow: inset -4px 4px 0 #222;
+font-size: 0.9rem;
+}
+
+/* triângulo do balão */
+.guia {
+  position: fixed;
+  bottom: 0px;
+  left: 50px;
+  display: flex;
+  flex-direction: column-reverse; /* Faz o balão ficar acima da imagem */
+  align-items: center;
+  z-index: 100;
+}
+
+.guia-img {
+  width: 360px;
+  height: auto;
+}
+
+.balao {
+  background: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  max-width: 220px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  position: relative;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Triângulo virado para baixo (acima da imagem) */
+.balao::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Posicionado embaixo do balão */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+
+
+
+
+.botao-fala-container {
+  position: fixed;
+  bottom: 200px;
+  right: 30px;
+  z-index: 101;
+  text-align: center;
+  font-weight: bold;
+  color: #120101;
+  font-family: 'Inter', sans-serif;
+}
+
+.botao-estiloso {
+  background-color: #dae724;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: #171111;
+  transition: 0.3s;
+}
+
+.botao-estiloso {
+  background-color: #dae724;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: #171111;
+  transition: 0.3s;
+  margin-top: 12px;
+}
+
+
+.botao-estiloso:hover {
+  background-color: #f5b700;
+  transform: scale(1.05);
+}
+
+.botao-musica {
+   position: fixed;
+  bottom: 150px;
+  right: 30px;
+  z-index: 102;
+  text-align: center;
+  font-weight: bold;
+  color: #120101;
+  font-family: 'oxinaum', cursive;
+}
+
+/* Botão fechar (✖) no menu lateral */
+.btn-fechar {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  z-index: 11001;
+}
+
+.btn-fechar:hover {
+  color: #f00;
+  transform: scale(1.2);
+}
+
+ .menu-lateral {
+  height: 100%;
+  width: 0; /* Começa fechado */
+  position: fixed;
+  z-index: 11000; /* Acima de outros elementos */
+  top: 0;
+  right: 0;
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-left: 1px solid #ccc;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        }
+
+.menu-lateral .btn-fechar {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+}
+
+       .menu-lateral h2, .menu-lateral p {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .menu-lateral p strong {
+            color: #333;
+        }

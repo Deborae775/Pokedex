@@ -20,6 +20,16 @@ body {
   overflow: hidden;
 }
 
+.Meupokemon {
+  position: absolute;
+  top: 40%; /* ajusta o posicionamento vertical */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 120px; /* tamanho menor */
+  width: auto;
+  z-index: 10;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -36,15 +46,22 @@ main {
 
 .pokemon_image {
   position: absolute;
-  top: 45%; /* ajusta o posicionamento vertical */
+  top: 40%; /* ajusta o posicionamento vertical */
   left: 50%;
   transform: translate(-50%, -50%);
   height: 120px; /* tamanho menor */
   width: auto;
-  z-index: 10;
+
 }
 
-
+.Tipo{
+    position: absolute;
+    bottom: 27%; /* define que vai ficar na parte inferior */
+    left: 20%;
+    transform: translateX(-35%);
+    width: 180%;
+    z-index: 9999; /* mantém na frente */
+}
 
 .pokemon_data{
     position: absolute;

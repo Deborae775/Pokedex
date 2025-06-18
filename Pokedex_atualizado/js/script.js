@@ -6,6 +6,7 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input_search');
 const buttonPrev = document.querySelector('.botao-prev');
 const buttonNext = document.querySelector('.botao-next');
+const pokemonType = document.querySelector('.pokemon_type');
 
 let searchPokemon = 1;
 
@@ -26,16 +27,18 @@ const renderPokemon = async (pokemon) => {
     pokemonName.innerHTML = 'DIGITE:';
     pokemonNumber.innerHTML = '';
     pokemonImage.style.display = 'none';
+    pokemonType.innerHTML = '';
     return;
   }
 
   pokemonName.innerHTML = 'Procurando...';
   pokemonNumber.innerHTML = '';
   pokemonImage.style.display = 'none';
+  pokemonType.innerHTML = '';
 
   const data = await fetchPokemon(pokemon);
-
-  if (data) {
+    
+    if (data) {
     pokemonImage.style.display = 'block';
     pokemonImage.src = data.sprites.front_default || '';
     pokemonImage.alt = data.name;
@@ -43,9 +46,13 @@ const renderPokemon = async (pokemon) => {
     pokemonNumber.innerHTML = `${data.id}`;
     searchPokemon = data.id;
     input.value = '';
+
+ const types = data.types.map(type => type.type.name);
+    pokemonType.innerHTML = types.join(' / ').toUpperCase();
   } else {
     pokemonName.innerHTML = 'Não encontrado ❌';
     pokemonNumber.innerHTML = '';
+    pokemonType.innerHTML = '';
   }
 };
 

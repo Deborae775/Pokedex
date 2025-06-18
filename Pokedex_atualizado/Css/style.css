@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=oxanium:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 
 * {
   margin: 0;
@@ -18,16 +19,6 @@ body {
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-}
-
-.Meupokemon {
-  position: absolute;
-  top: 40%; /* ajusta o posicionamento vertical */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 120px; /* tamanho menor */
-  width: auto;
-  z-index: 10;
 }
 
 main {
@@ -51,17 +42,10 @@ main {
   transform: translate(-50%, -50%);
   height: 120px; /* tamanho menor */
   width: auto;
-
+  z-index: 10;
 }
 
-.Tipo{
-    position: absolute;
-    bottom: 27%; /* define que vai ficar na parte inferior */
-    left: 20%;
-    transform: translateX(-35%);
-    width: 180%;
-    z-index: 9999; /* mantém na frente */
-}
+
 
 .pokemon_data{
     position: absolute;
@@ -99,7 +83,39 @@ text-transform: capitalize;
   box-shadow: -2px 3px 0 #888, -4px 6px 0 #333;
 }
 
+.pokemon_type_box {
+  position: absolute;
+  top: 70%; /* Ajuste para posicionar acima da pokedex */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px; /* Ou mesmo que o .pokemon_type_box */
+  height: 50px;  /* Altura desejada da base branca */
+  background-color: rgba(255, 255, 255, 0.9);
+ border-radius: 6px;
+  z-index: 80; /* atrás da .pokemon_type_box mas na frente da pokedex */
+}
 
+.tipo-msg {
+  position: absolute;
+  top: 72%; /* ajuste conforme necessário */
+  left: 44%;
+  transform: translateX(-70%);
+   font-family: 'Press Start 2P', cursive;
+  font-weight: bold;
+  color: black;
+  text-shadow: 1px 1px 2px #000;
+  z-index: 10000; /* maior que o da box */
+}
+.pokemon_type {
+  color: #333;
+  position: absolute;
+  top: 72%; /* ajuste conforme necessário */
+  left: 54%;
+  transform: translateX(-60%);
+ font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
 
 .buttons{
     position: absolute;
@@ -117,7 +133,7 @@ text-transform: capitalize;
     padding: 4%;
     border: 2px solid #000;
     border-radius: 5px;
-    font-size: clamp(8px, 5vw, 1rem);
+    font-family: 'Press Start 2P', cursive;
     font-weight: 600;
     color: white;
     background-color: #444;
@@ -131,20 +147,20 @@ text-transform: capitalize;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   margin-bottom: 10px;
   max-width: 200px;
-  font-size: 14px;
+  font-family: 'Press Start 2P', cursive;
   position: relative;
 }
 
 .button:active{
 box-shadow: inset -4px 4px 0 #222;
-font-size: 0.9rem;
+ font-family: 'Press Start 2P', cursive;
 }
 
 /* triângulo do balão */
 .guia {
   position: fixed;
   bottom: 0px;
-  left: 50px;
+  left: 20px;
   display: flex;
   flex-direction: column-reverse; /* Faz o balão ficar acima da imagem */
   align-items: center;
@@ -152,7 +168,7 @@ font-size: 0.9rem;
 }
 
 .guia-img {
-  width: 360px;
+  width: 160px;
   height: auto;
 }
 
@@ -162,7 +178,7 @@ font-size: 0.9rem;
   border-radius: 12px;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   max-width: 220px;
-  font-size: 14px;
+   font-family: 'Press Start 2P', cursive;
   font-weight: 600;
   color: #000;
   position: relative;
@@ -182,6 +198,10 @@ font-size: 0.9rem;
   border-color: white transparent transparent transparent;
 }
 
+.guia-img {
+  width: 400px;
+  height: auto;
+}
 
 
 
@@ -271,7 +291,7 @@ font-size: 0.9rem;
   padding-top: 60px;
   border-left: 1px solid #ccc;
   box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-        }
+  }
 
 .menu-lateral .btn-fechar {
   position: absolute;
@@ -284,16 +304,14 @@ font-size: 0.9rem;
   cursor: pointer;
   color: #555;
 }
-
-       .menu-lateral h2, .menu-lateral p {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .menu-lateral p strong {
-            color: #333;
-        }
+    .menu-lateral h2, .menu-lateral p {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+     font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    }
+   .menu-lateral p strong {
+    color: #333;
+   }

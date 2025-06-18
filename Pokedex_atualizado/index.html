@@ -9,7 +9,7 @@
 
 <script defer src="./js/script.js"></script>
   <title>Pokédex</title>
-  
+  <p class="pokemon_type"></p>
 </head>
 <body>
 
@@ -28,13 +28,29 @@ font-size: 18px; cursor:
 <!-- Menu lateral -->
 <aside id="menu-lateral" class="menu-lateral">
   <button class="btn-fechar" onclick="fecharMenu()">✖</button>
-  <h2> Como funciona a Pokédex?</h2>
+  <h1> Como funciona a Pokédex?</h1>
   <p>. Você pode digitar o nome ou número de um Pokémon.</p>
   <p>  Exemplo: <strong>pikachu</strong> ou <strong>25</strong></p>
   <p>. Atualmente você pode buscar até o Pokémon número <strong>1025</strong>.</p>
-  <p>  !AVISO! </p>
-  <p>. Você Sabia que eu criei um pokémon meu?</p>
-  <p>. PESQUISAR: 1026</p>
+  <P> Tipos de Pokémon</P>
+        Normal / Normal</P>
+        Fire / Fogo</P>
+        Water / Água</P>
+        Grass / Planta</P>
+        Electric / Elétrico</P>
+        Ice / Gelo</P>
+        Fighting / Lutador</P>
+        Poison / Venenoso</P>
+        Ground / Terrestre</P>
+        Flying / Voador</P>
+        Psychic / Psíquico</P>
+        Bug / Inseto</P>
+        Rock / Pedra</P>
+        Ghost / Fantasma</P>
+        Dark / Sombrio</P>
+        Dragon / Dragão</P>
+        Steel / Metálico</P>
+        Fairy / Fada</P>
 </aside>
 
 
@@ -65,22 +81,13 @@ font-size: 18px; cursor:
     <div class="buttons">
     <button class="button botao-prev">⬅️ Prev</button>
     <button class="button botao-next" > Next ➡️</button>
-    </div>
+</div>
 
+<div class="tipo-msg">Tipo:</div>
+<div class="pokemon_type_box">
+  <span class="pokemon_type"> </span>
+</div>
 
-    <div class="Tipo">
-    <label class="Tipo">Tipo:</label>
-    </div>
-
-
-    <!--Meu pokemon-->
-    <img src =".imagens/Meupokemon.png" alt ="Meupokemon" class="Meupokemon">
-    
-    <img src="./imagens/pokedex.png" alt="pokedex" class="pokedex">
-
-  </main>
-
-  <img id="ash" src="imagens/menino_ash.png" alt="Ash" />
   <audio id="pikachu-sound" src="sons/pikachu.mp3" preload="auto"></audio>
 
   <!-- Personagem guia -->
@@ -89,14 +96,14 @@ font-size: 18px; cursor:
     <div class="balao" id="fala">Olá! Bem-vindo(a) à Pokédex!</div>
   </div>
 
-
   <!-- Botão de conversa -->
   <div class="botao-fala-container">
-    <p>QUER CONVERSAR ?</p>
-    <button id="botao-fala" class="botao-estiloso">🗨️ FALE COMIGO</button>
+  <p>QUER CONVERSAR?</p>
+  <button id="botao-fala" class="botao-estiloso">
+    🗨️ FALE COMIGO
+  </button>
   </div>
 
-  
   <!-- Música e botão -->
   <audio id="musica-fundo" src="./Audio/musica.mp3" type="audio/mpeg" loop preload="auto"></audio>
   <button id="botao-musica" class="botao-estiloso botao-musica">🔊 Tocar Música</button>
@@ -145,7 +152,7 @@ font-size: 18px; cursor:
         botaoMusica.innerText = "🔊 Tocar Música";
       }
     });
-// Funções para o menu lateral (se elas estiverem no seu script.js externo, você pode removê-las daqui)
+       // Funções para o menu lateral 
     function abrirMenu() {
         document.getElementById("menu-lateral").style.width = "250px";
     }
@@ -154,12 +161,6 @@ font-size: 18px; cursor:
         document.getElementById("menu-lateral").style.width = "0";
     }
 
-    // Opcional: Iniciar o balão escondido ao carregar a página
-    // Isso é importante para garantir que ele esteja escondido no início.
-    // Você pode chamar toggleBalao(false) aqui ou confiar apenas no CSS.
-    // toggleBalao(false); // Descomente se quiser garantir que JS o esconda também.
-
-    
 
   </script>
 </body>
